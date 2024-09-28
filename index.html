@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product list with cart</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./src/input.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <!-- script -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="bg-rose50 text-rose900 py-8 md:py-11 grid place-items-center">
+    <main
+      class="flex flex-col gap-8 lg:flex-row w-11/12 max-w-6xl justify-between"
+    >
+      <section class="flex flex-col gap-6 flex-grow">
+        <header class="text-3xl font-bold">Desserts</header>
+        <!-- product list -->
+        <ul
+          id="product-list"
+          class="list-none grid grid-cols-[repeat(auto-fill,_minmax(12.5rem,_1fr))] gap-8"
+        >
+          <!-- single product -->
+
+          <!-- single product end -->
+        </ul>
+        <!-- product list end -->
+      </section>
+
+      <!-- cart -->
+      <section id="cart-section" class="bg-white p-6 rounded-md flex flex-col gap-4 h-max lg:min-w-80">
+        <header class="text-xl font-bold text-red">
+          Your Cart&#40<span id="cartItemsNo">0</span>&#41
+        </header>
+        <!-- cart items -->
+        <ul id="cart-items" class="hidden flex-grow"></ul>
+        <!-- cart items end -->
+        <!-- empty notification -->
+        <div
+          id="empty-notif"
+          class="flex flex-col items-center gap-4 text-sm font-medium text-rose500/85"
+        >
+          <img
+            src="./assets/images/illustration-empty-cart.svg"
+            alt=""
+            class="max-w-36"
+          />
+          <p>Your added items will appear here</p>
+        </div>
+        <!-- empty notification end -->
+
+        <!-- checkout -->
+        <div id="checkout" class="hidden space-y-5 transition-all duration-300">
+          <div class="flex justify-between items-center">
+            <p>Order Total</p>
+            <p data-total class="font-semibold text-xl"></p>
+          </div>
+          <div class="rounded-md bg-rose50/75 p-4 flex items-center justify-center gap-2">
+            <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+            <p class="text-sm">
+               This is a <strong>Carbon-neutral</strong> delivery
+            </p>
+          </div>
+          <button class="bg-red text-white font-normal text-lg rounded-full w-full py-4" onclick="openModal()">
+            Confirm Order
+          </button>
+        </div>
+        <!-- checkout end -->
+      </section>
+      <!-- cart end -->
+
+      <!-- confirmation of order dialog -->
+       <dialog class="rounded-lg">
+        <section class="p-8 space-y-6">
+          
+          <header class="space-y-3">
+            <img src="./assets/images/icon-order-confirmed.svg" alt="">
+            <h2 class="text-3xl font-bold leading-7">Order Confirmed</h2>
+            <p class="text-rose500">We hope you enjoy your meal!</p>
+          </header>
+
+          <section class="bg-rose50 rounded-md p-4">
+            <ul id="purchased"></ul>
+
+            <div class="flex items-end justify-between py-4">
+              <p>Order Total</p>
+              <p data-total class="font-bold text-3xl"></p>
+            </div>
+          </section>
+
+          <button onclick="reset()" class="w-full py-4 bg-red text-white font-normal text-lg rounded-full">Start New Order</button>
+        </section>
+       </dialog>
+      <!-- confirmation of order dialog end -->
+    </main>
+
+    <!-- attribution -->
+    <div class="sr-only text-center text-xs [&_a]:text-[hsl(228,_45%,_44%)]">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Benedict Jr</a>.
+    </div>
+
+    <!-- ionic -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 17rem;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: none;
+  }
+}
+
+#cart-items:has(li) {
+  display: flex;
+  flex-direction: column;
+}
+
+#cart-items:has(li) + #empty-notif {
+  display: none;
+}
